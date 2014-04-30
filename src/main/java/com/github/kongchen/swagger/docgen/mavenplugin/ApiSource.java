@@ -2,6 +2,7 @@ package com.github.kongchen.swagger.docgen.mavenplugin;
 
 import com.github.kongchen.swagger.docgen.GenerateException;
 import com.wordnik.swagger.annotations.Api;
+
 import org.reflections.Reflections;
 
 import java.util.HashSet;
@@ -25,6 +26,11 @@ public class ApiSource {
      * @parameter
      */
     private String apiVersion;
+
+    /**
+     * @parameter
+     */
+    private String ignoredTypes;
 
     /**
      * @parameter
@@ -137,6 +143,14 @@ public class ApiSource {
 
     public void setSwaggerDirectory(String swaggerDirectory) {
         this.swaggerDirectory = swaggerDirectory;
+    }
+
+    public String getIgnoredTypes() {
+        return ignoredTypes;
+    }
+
+    public void setIgnoredTypes(String ignoredTypes) {
+        this.ignoredTypes = ignoredTypes;
     }
 
 }
